@@ -35,7 +35,7 @@ def harf_ara(bulunan_kelime):
 
             messagebox.showinfo("KAYBETTİNİZ","HAKKINIZ DOLDU KAYBETTİNİZ\nCevap:"+rastgele_kelime)
             kelime_çıktısı.destroy()
-            oyun("Kelimeler")
+            oyun("C:\\Users\\ygune\\Desktop\\Adam_asmaca\\Adam-Asmaca\\Words\\Kelimeler")
             change_img()
            
         for i in range(len(rastgele_kelime)-1):  
@@ -61,7 +61,7 @@ def harf_ara(bulunan_kelime):
     if(aynı_mı(kelime)==True):  
         messagebox.showinfo("TEBRİKLER","🎉🎉🎉TEBRİKLER🎉🎉🎉\n OYUNU KAZANDINIZ")
         kelime_çıktısı.destroy()
-        oyun("Kelimeler")
+        oyun("C:\\Users\\ygune\\Desktop\\Adam_asmaca\\Adam-Asmaca\\Words\\Kelimeler")
         change_img()
         
 def aynı_mı (kelime):
@@ -79,7 +79,8 @@ def aynı_mı (kelime):
 
 def change_img():
     #global hak
-    resim = str(6-hak)
+    resim ="C:\\Users\\ygune\\Desktop\\Adam_asmaca\\Adam-Asmaca\\Images\\"
+    resim += str(6-hak)
     resim+=".png"
     image = Image.open(resim)
     boyutlu_resim = image.resize((215, 250))
@@ -118,10 +119,11 @@ def rastgele_harf_bul():
 
 def oyun(oyun_türü_sec):
 
+    oyun_türü_sec_print = oyun_türü_sec.split("\\")
     
     kelime_çıktısı.destroy()
 
-    oyun_türü_mesaji = Label(text=str(oyun_türü_sec)+" kategorisinden kelime seçildi",font=("Arial", 11))
+    oyun_türü_mesaji = Label(text=str(oyun_türü_sec_print[-1])+" kategorisinden kelime seçildi",font=("Arial", 11))
     oyun_türü_mesaji.place(relx=0.30,rely=0.45)
     oyun_türü_mesaji.after(2000,oyun_türü_mesaji.destroy)
     
@@ -130,8 +132,8 @@ def oyun(oyun_türü_sec):
     hak=6
     button = {}
     
-
-    oyun_türü_secimi = str(oyun_türü_sec)
+    oyun_türü_secimi = "C:\\Users\\ygune\\Desktop\\Adam_asmaca\\Adam-Asmaca\\Words\\"
+    oyun_türü_secimi += str(oyun_türü_sec_print[-1])
     oyun_türü_secimi+=".txt"
 
     #KELİMELERİ OKUMA VE SEÇME
@@ -202,14 +204,14 @@ yeni_kelime.place(relx=0.02,rely=0.93)
 
 kelime_çıktısı = Label()
 
-oyun("Kelimeler")
+oyun("C:\\Users\\ygune\\Desktop\\Adam_asmaca\\Adam-Asmaca\\Words\\Kelimeler")
 
 
 #HARFLER
 harf_al()
 
 #İLK RESİM
-image = Image.open("0.png")
+image = Image.open("C:\\Users\\ygune\\Desktop\\Adam_asmaca\\Adam-Asmaca\\Images\\0.png")
 boyutlu_resim = image.resize((215, 250))
 img1 = ImageTk.PhotoImage(boyutlu_resim)
 label= Label(pencere,image= img1 )
