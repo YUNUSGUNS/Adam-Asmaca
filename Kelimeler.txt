@@ -1,0 +1,12 @@
+masa
+kalem
+kitap
+sandalye
+yatak
+telefon
+bilgisayar
+uçak
+perde
+bardak
+tencere
+kaşık
